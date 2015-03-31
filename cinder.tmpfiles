@@ -1,0 +1,5 @@
+Z /etc/cinder/* 0640 root cinder - -
+z /etc/cinder 0750 root cinder - -
+d /var/lib/cinder - cinder cinder - -
+d /var/log/cinder - cinder cinder - -
+d /run/lock/cinder - cinder cinder - -

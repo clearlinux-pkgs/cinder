@@ -1,0 +1,16 @@
+install -d -m 755 %{buildroot}/usr/share/defaults/cinder
+install -p -D -m 644 etc/cinder/*.conf %{buildroot}/usr/share/defaults/cinder/
+install -p -D -m 644 etc/cinder/*.ini %{buildroot}/usr/share/defaults/cinder/
+install -p -D -m 644 etc/cinder/*.json %{buildroot}/usr/share/defaults/cinder/
+install -p -D -m 644 etc/cinder/cinder.conf.sample %{buildroot}/usr/share/defaults/cinder/cinder.conf
+
+install -d -m 755 %{buildroot}/usr/share/cinder/rootwrap.d
+mv %{buildroot}/usr/share/defaults/cinder/rootwrap.conf %{buildroot}/usr/share/cinder/
+install -p -D -m 640 etc/cinder/rootwrap.d/*.filters %{buildroot}/usr/share/cinder/rootwrap.d/
+
+install -d -m 750 %{buildroot}/usr/share/defaults/sudo/sudoers.d
+install -p -D -m 440 cinder.sudoers %{buildroot}/usr/share/defaults/sudo/sudoers.d/cinder
+
+install -d -m 750 %{buildroot}/usr/share/defaults/tgt/conf.d/
+install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinder.conf
+

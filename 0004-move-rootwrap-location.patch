@@ -1,0 +1,25 @@
+From e7c6fb378b07ba990ee4f1ecf75e79ff86b0486a Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Wed, 27 May 2015 17:41:38 -0500
+Subject: [PATCH] move rootwrap location
+
+---
+ etc/cinder/rootwrap.conf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/etc/cinder/rootwrap.conf b/etc/cinder/rootwrap.conf
+index 4d280ea..dc77589 100644
+--- a/etc/cinder/rootwrap.conf
++++ b/etc/cinder/rootwrap.conf
+@@ -4,7 +4,7 @@
+ [DEFAULT]
+ # List of directories to load filter definitions from (separated by ',').
+ # These directories MUST all be only writeable by root !
+-filters_path=/etc/cinder/rootwrap.d,/usr/share/cinder/rootwrap
++filters_path=/usr/share/cinder/rootwrap.d
+ 
+ # List of directories to search executables in, in case filters do not
+ # explicitely specify a full path (separated by ',')
+-- 
+2.1.0
+
