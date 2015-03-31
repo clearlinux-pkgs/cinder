@@ -1,0 +1,21 @@
+From 177bb52c5d0f7c1631de3b00f9cea9c26ed69c96 Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Wed, 1 Apr 2015 15:58:01 -0600
+Subject: [PATCH] cinder sudoers entry
+
+Signed-off-by: Alberto Murillo <alberto.murillo.silva@intel.com>
+---
+ cinder.sudoers | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 cinder.sudoers
+
+diff --git a/cinder.sudoers b/cinder.sudoers
+new file mode 100644
+index 0000000..26dee17
+--- /dev/null
++++ b/cinder.sudoers
+@@ -0,0 +1 @@
++cinder ALL = (root) NOPASSWD: /usr/bin/cinder-rootwrap /usr/share/cinder/rootwrap.conf * 
+-- 
+2.1.0
+
