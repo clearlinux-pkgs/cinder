@@ -4,7 +4,7 @@
 #
 Name     : cinder
 Version  : 2015.1.1
-Release  : 14
+Release  : 15
 URL      : http://tarballs.openstack.org/cinder/cinder-2015.1.1.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-2015.1.1.tar.gz
 Source1  : cinder.tmpfiles
