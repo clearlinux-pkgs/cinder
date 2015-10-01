@@ -101,7 +101,7 @@ sqlalchemy-migrate-python
 SQLAlchemy-python
 sqlparse-python
 stevedore-python
-suds-python
+suds-jurko
 taskflow-python
 tempest-lib-python
 Tempita-python
