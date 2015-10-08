@@ -2,3 +2,4 @@
 0002-cinder-sudoers-entry.patch
 0003-Add-cinder-s-tgt-config.patch
 0004-move-rootwrap-location.patch
+0005-Use-oslo-to-find-config-files.patch
