@@ -9,7 +9,7 @@ mv %{buildroot}/usr/share/defaults/cinder/rootwrap.conf %{buildroot}/usr/share/c
 install -p -D -m 640 etc/cinder/rootwrap.d/*.filters %{buildroot}/usr/share/cinder/rootwrap.d/
 
 install -d -m 750 %{buildroot}/usr/share/defaults/sudo/sudoers.d
-install -p -D -m 440 cinder.sudoers %{buildroot}/usr/share/defaults/sudo/sudoers.d/cinder
+install -p -D -m 440 etc/sudoers.d/cinder.sudoers %{buildroot}/usr/share/defaults/sudo/sudoers.d/cinder
 
 install -d -m 750 %{buildroot}/usr/share/defaults/tgt/conf.d/
 install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinder.conf
