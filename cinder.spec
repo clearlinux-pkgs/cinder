@@ -4,7 +4,7 @@
 #
 Name     : cinder
 Version  : 7.0.0.0rc1
-Release  : 16
+Release  : 17
 URL      : http://tarballs.openstack.org/cinder/cinder-7.0.0.0rc1.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-7.0.0.0rc1.tar.gz
 Source1  : cinder.tmpfiles
@@ -15,140 +15,136 @@ Requires: cinder-bin
 Requires: cinder-python
 Requires: cinder-config
 Requires: cinder-data
-BuildRequires : Babel-python
-BuildRequires : Jinja2-python
-BuildRequires : Mako-python
-BuildRequires : MarkupSafe-python
-BuildRequires : MySQL-python-python
-BuildRequires : Paste-python
-BuildRequires : PasteDeploy-python
-BuildRequires : PyYAML-python
-BuildRequires : Pygments-python
-BuildRequires : Routes-python
-BuildRequires : SQLAlchemy-python
-BuildRequires : Sphinx-python
-BuildRequires : Tempita-python
-BuildRequires : WebOb-python
-BuildRequires : aioeventlet-python
-BuildRequires : alembic-python
-BuildRequires : amqp-python
-BuildRequires : anyjson-python
+BuildRequires : Babel
+BuildRequires : Jinja2
+BuildRequires : Mako
+BuildRequires : MarkupSafe
+BuildRequires : MySQL-python
+BuildRequires : Paste
+BuildRequires : PasteDeploy
+BuildRequires : PyYAML
+BuildRequires : Pygments
+BuildRequires : Routes
+BuildRequires : SQLAlchemy
+BuildRequires : Sphinx
+BuildRequires : Tempita
+BuildRequires : WebOb
+BuildRequires : aioeventlet
+BuildRequires : alembic
+BuildRequires : amqp
+BuildRequires : anyjson
+BuildRequires : automaton
 BuildRequires : cffi
-BuildRequires : cffi-python
-BuildRequires : cliff-python
-BuildRequires : cmd2-python
-BuildRequires : coverage-python
-BuildRequires : cryptography-python
-BuildRequires : ddt-python
-BuildRequires : decorator-python
-BuildRequires : discover-python
-BuildRequires : docutils-python
-BuildRequires : ecdsa-python
-BuildRequires : enum34-python
-BuildRequires : eventlet-python
+BuildRequires : cliff
+BuildRequires : cmd2
+BuildRequires : coverage
+BuildRequires : cryptography
+BuildRequires : ddt
+BuildRequires : decorator
+BuildRequires : discover
+BuildRequires : docutils
+BuildRequires : ecdsa
+BuildRequires : enum34
+BuildRequires : eventlet
 BuildRequires : extras
-BuildRequires : extras-python
-BuildRequires : fixtures-python
-BuildRequires : flake8-python
-BuildRequires : funcsigs-python
-BuildRequires : futures-python
-BuildRequires : greenlet-python
-BuildRequires : hacking-python
-BuildRequires : httplib2-python
-BuildRequires : iso8601-python
-BuildRequires : jsonpatch-python
-BuildRequires : jsonpointer-python
-BuildRequires : jsonschema-python
-BuildRequires : keystonemiddleware-python
-BuildRequires : kombu-python
-BuildRequires : linecache2-python
-BuildRequires : lxml-python
-BuildRequires : mccabe-python
-BuildRequires : mox-python
-BuildRequires : mox3-python
-BuildRequires : msgpack-python-python
-BuildRequires : netaddr-python
-BuildRequires : netifaces-python
-BuildRequires : networkx-python
-BuildRequires : ordereddict-python
+BuildRequires : fixtures
+BuildRequires : flake8
+BuildRequires : funcsigs
+BuildRequires : futures
+BuildRequires : greenlet
+BuildRequires : hacking
+BuildRequires : httplib2
+BuildRequires : iso8601
+BuildRequires : jsonpatch
+BuildRequires : jsonpointer
+BuildRequires : jsonschema
+BuildRequires : keystonemiddleware
+BuildRequires : kombu
+BuildRequires : linecache2
+BuildRequires : lxml
+BuildRequires : mccabe
+BuildRequires : mox
+BuildRequires : mox3
+BuildRequires : msgpack-python
+BuildRequires : netaddr
+BuildRequires : netifaces
+BuildRequires : networkx
+BuildRequires : ordereddict
 BuildRequires : os-brick
-BuildRequires : oslo.concurrency-python
-BuildRequires : oslo.config-python
-BuildRequires : oslo.context-python
-BuildRequires : oslo.db-python
-BuildRequires : oslo.i18n-python
-BuildRequires : oslo.log-python
-BuildRequires : oslo.messaging-python
-BuildRequires : oslo.middleware-python
+BuildRequires : oslo.concurrency
+BuildRequires : oslo.config
+BuildRequires : oslo.context
+BuildRequires : oslo.db
+BuildRequires : oslo.i18n
+BuildRequires : oslo.log
+BuildRequires : oslo.messaging
+BuildRequires : oslo.middleware
 BuildRequires : oslo.policy
 BuildRequires : oslo.reports
-BuildRequires : oslo.rootwrap-python
-BuildRequires : oslo.serialization-python
-BuildRequires : oslo.utils-python
+BuildRequires : oslo.rootwrap
+BuildRequires : oslo.serialization
+BuildRequires : oslo.utils
 BuildRequires : oslo.versionedobjects
-BuildRequires : oslo.vmware-python
-BuildRequires : oslosphinx-python
-BuildRequires : oslotest-python
-BuildRequires : osprofiler-python
-BuildRequires : paramiko-python
+BuildRequires : oslo.vmware
+BuildRequires : oslosphinx
+BuildRequires : oslotest
+BuildRequires : osprofiler
+BuildRequires : paramiko
 BuildRequires : pbr
-BuildRequires : pep8-python
+BuildRequires : pep8
 BuildRequires : pip
 BuildRequires : pluggy
-BuildRequires : posix_ipc-python
-BuildRequires : prettytable-python
-BuildRequires : psycopg2-python
+BuildRequires : posix_ipc
+BuildRequires : prettytable
+BuildRequires : psycopg2
 BuildRequires : py-python
-BuildRequires : pyOpenSSL-python
-BuildRequires : pyasn1-python
-BuildRequires : pycadf-python
+BuildRequires : pyOpenSSL
+BuildRequires : pyasn1
+BuildRequires : pycadf
 BuildRequires : pycparser
-BuildRequires : pycparser-python
-BuildRequires : pycrypto-python
-BuildRequires : pyflakes-python
-BuildRequires : pyparsing-python
+BuildRequires : pycrypto
+BuildRequires : pyflakes
+BuildRequires : pyparsing
 BuildRequires : pytest
-BuildRequires : python-barbicanclient-python
+BuildRequires : python-barbicanclient
 BuildRequires : python-dev
-BuildRequires : python-glanceclient-python
-BuildRequires : python-keystoneclient-python
-BuildRequires : python-mimeparse-python
+BuildRequires : python-glanceclient
+BuildRequires : python-keystoneclient
+BuildRequires : python-mimeparse
 BuildRequires : python-mock
-BuildRequires : python-novaclient-python
-BuildRequires : python-subunit-python
-BuildRequires : python-swiftclient-python
-BuildRequires : pytz-python
-BuildRequires : repoze.lru-python
-BuildRequires : requests-python
-BuildRequires : retrying-python
-BuildRequires : rtslib-fb-python
+BuildRequires : python-novaclient
+BuildRequires : python-subunit
+BuildRequires : python-swiftclient
+BuildRequires : pytz
+BuildRequires : repoze.lru
+BuildRequires : requests
+BuildRequires : retrying
+BuildRequires : rtslib-fb
 BuildRequires : setuptools
-BuildRequires : simplejson-python
+BuildRequires : simplejson
 BuildRequires : six
-BuildRequires : six-python
-BuildRequires : sqlalchemy-migrate-python
-BuildRequires : sqlparse-python
-BuildRequires : stevedore-python
+BuildRequires : sqlalchemy-migrate
+BuildRequires : sqlparse
+BuildRequires : stevedore
 BuildRequires : suds-jurko
-BuildRequires : taskflow-python
-BuildRequires : tempest-lib-python
-BuildRequires : testrepository-python
-BuildRequires : testresources-python
+BuildRequires : taskflow
+BuildRequires : tempest-lib
+BuildRequires : testrepository
+BuildRequires : testresources
 BuildRequires : testscenarios
-BuildRequires : testscenarios-python
 BuildRequires : testtools
-BuildRequires : testtools-python
 BuildRequires : tox
-BuildRequires : traceback2-python
-BuildRequires : trollius-python
-BuildRequires : unittest2-python
-BuildRequires : urllib3-python
+BuildRequires : traceback2
+BuildRequires : trollius
+BuildRequires : unittest2
+BuildRequires : urllib3
 BuildRequires : virtualenv
-BuildRequires : warlock-python
+BuildRequires : warlock
 Patch1: 0001-default-config.patch
 Patch2: 0002-cinder-sudoers-entry.patch
 Patch3: 0003-Add-cinder-s-tgt-config.patch
 Patch4: 0004-move-rootwrap-location.patch
+Patch5: 0005-Use-oslo-to-find-config-files.patch
 
 %description
 oslo-incubator
@@ -185,44 +181,10 @@ data components for the cinder package.
 %package python
 Summary: python components for the cinder package.
 Group: Default
-Requires: Babel-python
-Requires: Paste-python
-Requires: PasteDeploy-python
-Requires: Routes-python
-Requires: SQLAlchemy-python
-Requires: WebOb-python
-Requires: anyjson-python
-Requires: enum34-python
-Requires: eventlet-python
-Requires: greenlet-python
-Requires: iso8601-python
-Requires: kombu-python
-Requires: lxml-python
-Requires: oslo.concurrency-python
-Requires: oslo.context-python
-Requires: oslo.db-python
-Requires: oslo.i18n-python
-Requires: oslo.log-python
-Requires: oslo.messaging-python
-Requires: oslo.middleware-python
-Requires: oslo.rootwrap-python
-Requires: oslo.serialization-python
-Requires: oslo.utils-python
-Requires: oslo.vmware-python
-Requires: osprofiler-python
-Requires: paramiko-python
-Requires: pycrypto-python
-Requires: pyparsing-python
-Requires: python-barbicanclient-python
-Requires: python-glanceclient-python
-Requires: python-novaclient-python
-Requires: python-swiftclient-python
-Requires: requests-python
-Requires: retrying-python
-Requires: rtslib-fb-python
-Requires: six-python
-Requires: sqlalchemy-migrate-python
-Requires: taskflow-python
+Requires: keystonemiddleware
+Requires: netaddr
+Requires: oslo.config
+Requires: stevedore
 
 %description python
 python components for the cinder package.
@@ -234,6 +196,7 @@ python components for the cinder package.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 python2 setup.py build -b py2
@@ -242,7 +205,7 @@ python2 setup.py build -b py2
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-python2 setup.py test || :
+PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
@@ -258,7 +221,7 @@ install -d -m 755 %{buildroot}/usr/share/cinder/rootwrap.d
 mv %{buildroot}/usr/share/defaults/cinder/rootwrap.conf %{buildroot}/usr/share/cinder/
 install -p -D -m 640 etc/cinder/rootwrap.d/*.filters %{buildroot}/usr/share/cinder/rootwrap.d/
 install -d -m 750 %{buildroot}/usr/share/defaults/sudo/sudoers.d
-install -p -D -m 440 cinder.sudoers %{buildroot}/usr/share/defaults/sudo/sudoers.d/cinder
+install -p -D -m 440 etc/sudoers.d/cinder.sudoers %{buildroot}/usr/share/defaults/sudo/sudoers.d/cinder
 install -d -m 750 %{buildroot}/usr/share/defaults/tgt/conf.d/
 install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinder.conf
 ## make_install_append end
