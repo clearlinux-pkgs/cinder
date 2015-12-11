@@ -1,0 +1,28 @@
+From e804a0de4281a4396fee9e41ccd32ede5fd62a9b Mon Sep 17 00:00:00 2001
+From: Salvador Fuentes <salvador.fuentes@intel.com>
+Date: Fri, 11 Dec 2015 08:15:04 -0600
+Subject: [PATCH] Set default syslog
+
+Signed-off-by: Salvador Fuentes <salvador.fuentes@intel.com>
+---
+ etc/cinder/cinder.conf.sample | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/etc/cinder/cinder.conf.sample b/etc/cinder/cinder.conf.sample
+index 84e1639..f475c1c 100644
+--- a/etc/cinder/cinder.conf.sample
++++ b/etc/cinder/cinder.conf.sample
+@@ -1,7 +1,9 @@
+ [DEFAULT]
+ 
+-log_dir = /var/log/cinder/
++use_syslog = true
+ 
++# default logs location if syslog is disable
++log_dir = /var/log/cinder/
+ #
+ # Options defined in oslo.messaging
+ #
+-- 
+2.5.0
+
