@@ -4,7 +4,7 @@
 #
 Name     : cinder
 Version  : 7.0.0
-Release  : 20
+Release  : 21
 URL      : http://tarballs.openstack.org/cinder/cinder-7.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-7.0.0.tar.gz
 Source1  : cinder.tmpfiles
@@ -145,6 +145,7 @@ Patch2: 0002-cinder-sudoers-entry.patch
 Patch3: 0003-Add-cinder-s-tgt-config.patch
 Patch4: 0004-move-rootwrap-location.patch
 Patch5: 0005-Use-oslo-to-find-config-files.patch
+Patch6: 0006-Set-default-syslog.patch
 
 %description
 This is a database migration repository.
@@ -196,6 +197,7 @@ python components for the cinder package.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 python2 setup.py build -b py2
