@@ -1,10 +1,57 @@
 CHANGES
 =======
 
+7.0.1
+-----
+
+* Updated from global requirements
+* Add release notes for Liberty stable release
+* Updated from global requirements
+* Updated from global requirements
+* VNX: Fix issue in deleting cg/cgsnapshot
+* Fix the bug of can't get the desired image info
+* Use proper config option to connect to keystone
+* Fix swap_volume for case without migration
+* LIO: Handle initiator IQNs as case insensitive
+* Fix delete quota of subprojects
+* Take into consideration races in XtremIOClient3
+* NetApp: Cleanup if E-Series volume create fails
+* Fix quotas issue during volume transfer
+* Fix ScaleIO driver provisioning key
+* ScaleIO driver: update_migrated_volume
+* VMAX Target iSCSI IP Address
+* Updated from global requirements
+* ScaleIO extend volume round up capacity
+* Retry on database deadlock on service_update method
+* Fix InstanceLocalityFilter scheduler filter
+* Updated from global requirements
+* LOG.exception should be mocked in unit test
+* add "unreleased" release notes page
+* add first reno-based release note
+* Add reno for release notes management
+* 3PAR drivers volume size conversion is incorrect
+* Using extra-specs in cloned vols for Nimble driver
+* Fix failure of unit test TestCinderAllCmd
+* Imported Translations from Zanata
+* Remove the destination volume check in delete_volume
+* Remove the jointly loaded model in finish_volume_migration
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Updated from global requirements
+* Imported Translations from Zanata
+* Detach volume on device validation failure
+* Update .gitreview for stable/liberty
+* XtremIO fix remapping bug
+* Check sio_storage_pools in check_for_setup_error
+* Switch to post-versioning
+* Add multi-initiator extra-spec for Nimble driver
+* Fix log formatting for rbd driver
+
 7.0.0
 -----
 
 * Squashed commit of WebOb 1.5 and oslo.db fixes
+* HNAS iSCSI manage does not work with spaces
 
 7.0.0.0rc2
 ----------
