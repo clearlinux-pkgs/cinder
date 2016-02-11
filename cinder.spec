@@ -4,7 +4,7 @@
 #
 Name     : cinder
 Version  : 7.0.1
-Release  : 22
+Release  : 23
 URL      : http://tarballs.openstack.org/cinder/cinder-7.0.1.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-7.0.1.tar.gz
 Source1  : cinder.tmpfiles
