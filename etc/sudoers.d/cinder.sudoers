@@ -1,1 +1,0 @@
-cinder ALL = (root) NOPASSWD: /usr/bin/cinder-rootwrap /usr/share/cinder/rootwrap.conf *
