@@ -4,7 +4,7 @@
 #
 Name     : cinder
 Version  : 8.0.0
-Release  : 30
+Release  : 31
 URL      : http://tarballs.openstack.org/cinder/cinder-8.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-8.0.0.tar.gz
 Source1  : cinder.tmpfiles
@@ -15,152 +15,65 @@ Requires: cinder-bin
 Requires: cinder-python
 Requires: cinder-config
 Requires: cinder-data
-BuildRequires : Babel
-BuildRequires : GitPython-python
-BuildRequires : Jinja2
-BuildRequires : Mako
-BuildRequires : MarkupSafe
-BuildRequires : MySQL-python
-BuildRequires : Paste
-BuildRequires : PasteDeploy
-BuildRequires : PyMySQL-python
-BuildRequires : PyYAML
-BuildRequires : Pygments
-BuildRequires : Routes
-BuildRequires : SQLAlchemy
-BuildRequires : Sphinx
-BuildRequires : Tempita
-BuildRequires : WebOb
-BuildRequires : aioeventlet
-BuildRequires : alembic
-BuildRequires : amqp
-BuildRequires : anyjson
-BuildRequires : automaton
-BuildRequires : bandit-python
-BuildRequires : cachetools-python
-BuildRequires : cffi
-BuildRequires : cliff
-BuildRequires : cmd2
-BuildRequires : coverage
-BuildRequires : cryptography
-BuildRequires : ddt
-BuildRequires : decorator
-BuildRequires : discover
-BuildRequires : docutils
-BuildRequires : ecdsa
-BuildRequires : enum34
-BuildRequires : eventlet
-BuildRequires : extras
-BuildRequires : fixtures
-BuildRequires : flake8
-BuildRequires : funcsigs
-BuildRequires : futures
-BuildRequires : futurist-python
-BuildRequires : google-api-python-client-python
-BuildRequires : greenlet
-BuildRequires : hacking
-BuildRequires : httplib2
-BuildRequires : iso8601
-BuildRequires : jsonpatch
-BuildRequires : jsonpointer
-BuildRequires : jsonschema
-BuildRequires : kazoo-python
-BuildRequires : keystonemiddleware
-BuildRequires : kombu
-BuildRequires : linecache2
-BuildRequires : lxml
-BuildRequires : mccabe
-BuildRequires : mox
-BuildRequires : mox3
-BuildRequires : msgpack-python
-BuildRequires : netaddr
-BuildRequires : netifaces
-BuildRequires : networkx
-BuildRequires : oauth2client-python
-BuildRequires : ordereddict
-BuildRequires : os-brick
-BuildRequires : os-testr-python
-BuildRequires : os-win-python
-BuildRequires : oslo.concurrency
-BuildRequires : oslo.config
-BuildRequires : oslo.context
-BuildRequires : oslo.db
-BuildRequires : oslo.i18n
-BuildRequires : oslo.log
-BuildRequires : oslo.messaging
-BuildRequires : oslo.middleware
-BuildRequires : oslo.policy
-BuildRequires : oslo.reports
-BuildRequires : oslo.rootwrap
-BuildRequires : oslo.serialization
-BuildRequires : oslo.utils
-BuildRequires : oslo.versionedobjects
-BuildRequires : oslo.vmware
-BuildRequires : oslosphinx
-BuildRequires : oslotest
-BuildRequires : osprofiler
-BuildRequires : paramiko
+Requires: Babel
+Requires: Paste
+Requires: PasteDeploy
+Requires: Routes
+Requires: SQLAlchemy
+Requires: WebOb
+Requires: decorator
+Requires: enum34
+Requires: eventlet
+Requires: google-api-python-client
+Requires: greenlet
+Requires: httplib2
+Requires: iso8601
+Requires: lxml
+Requires: oauth2client
+Requires: os-brick
+Requires: os-win
+Requires: oslo.concurrency
+Requires: oslo.config
+Requires: oslo.context
+Requires: oslo.db
+Requires: oslo.i18n
+Requires: oslo.log
+Requires: oslo.messaging
+Requires: oslo.middleware
+Requires: oslo.policy
+Requires: oslo.reports
+Requires: oslo.rootwrap
+Requires: oslo.serialization
+Requires: oslo.service
+Requires: oslo.utils
+Requires: oslo.versionedobjects
+Requires: oslo.vmware
+Requires: osprofiler
+Requires: paramiko
+Requires: pbr
+Requires: pycrypto
+Requires: pyparsing
+Requires: python-barbicanclient
+Requires: python-glanceclient
+Requires: python-keystoneclient
+Requires: python-novaclient
+Requires: python-swiftclient
+Requires: pytz
+Requires: requests
+Requires: retrying
+Requires: rtslib-fb
+Requires: simplejson
+Requires: six
+Requires: sqlalchemy-migrate
+Requires: stevedore
+Requires: suds-jurko
+Requires: taskflow
+Requires: tooz
 BuildRequires : pbr
-BuildRequires : pep8
-BuildRequires : pika-pool-python
-BuildRequires : pika-python
 BuildRequires : pip
-BuildRequires : pluggy
-BuildRequires : posix_ipc
-BuildRequires : prettytable
-BuildRequires : psycopg2
-BuildRequires : py-python
-BuildRequires : pyOpenSSL
-BuildRequires : pyasn1
-BuildRequires : pyasn1-modules-python
-BuildRequires : pycadf
-BuildRequires : pycparser
-BuildRequires : pycrypto
-BuildRequires : pyflakes
-BuildRequires : pyinotify-python
-BuildRequires : pyparsing
-BuildRequires : pyrsistent-python
-BuildRequires : pytest
-BuildRequires : python-barbicanclient
 BuildRequires : python-dev
-BuildRequires : python-editor-python
-BuildRequires : python-glanceclient
-BuildRequires : python-keystoneclient
-BuildRequires : python-mimeparse
-BuildRequires : python-mock
-BuildRequires : python-novaclient
-BuildRequires : python-subunit
-BuildRequires : python-swiftclient
-BuildRequires : pytz
-BuildRequires : reno-python
-BuildRequires : repoze.lru
-BuildRequires : requests
-BuildRequires : retrying
-BuildRequires : rsa-python
-BuildRequires : rtslib-fb
+BuildRequires : python3-dev
 BuildRequires : setuptools
-BuildRequires : simplejson
-BuildRequires : six
-BuildRequires : sqlalchemy-migrate
-BuildRequires : sqlparse
-BuildRequires : stevedore
-BuildRequires : suds-jurko
-BuildRequires : taskflow
-BuildRequires : tempest-lib
-BuildRequires : testrepository
-BuildRequires : testresources
-BuildRequires : testscenarios
-BuildRequires : testtools
-BuildRequires : tooz-python
-BuildRequires : tox
-BuildRequires : traceback2
-BuildRequires : trollius
-BuildRequires : unittest2
-BuildRequires : uritemplate-python
-BuildRequires : urllib3
-BuildRequires : virtualenv
-BuildRequires : voluptuous-python
-BuildRequires : warlock
 Patch1: 0001-default-config.patch
 Patch2: 0002-cinder-sudoers-entry.patch
 Patch3: 0003-Add-cinder-s-tgt-config.patch
@@ -201,15 +114,6 @@ data components for the cinder package.
 %package python
 Summary: python components for the cinder package.
 Group: Default
-Requires: google-api-python-client-python
-Requires: httplib2
-Requires: keystonemiddleware
-Requires: oauth2client-python
-Requires: os-win-python
-Requires: oslo.config
-Requires: simplejson
-Requires: stevedore
-Requires: tooz-python
 
 %description python
 python components for the cinder package.
@@ -224,16 +128,16 @@ python components for the cinder package.
 %patch5 -p1
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1489272080
 python2 setup.py build -b py2
+python3 setup.py build -b py3
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
+export SOURCE_DATE_EPOCH=1489272080
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 mkdir -p %{buildroot}/usr/lib/tmpfiles.d
 install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/cinder.conf
 ## make_install_append content
