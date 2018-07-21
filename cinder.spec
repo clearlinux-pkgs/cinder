@@ -4,7 +4,7 @@
 #
 Name     : cinder
 Version  : 8.0.0
-Release  : 31
+Release  : 32
 URL      : http://tarballs.openstack.org/cinder/cinder-8.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-8.0.0.tar.gz
 Source1  : cinder.tmpfiles
@@ -12,9 +12,11 @@ Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: cinder-bin
-Requires: cinder-python
+Requires: cinder-python3
 Requires: cinder-config
 Requires: cinder-data
+Requires: cinder-license
+Requires: cinder-python
 Requires: Babel
 Requires: Paste
 Requires: PasteDeploy
@@ -28,6 +30,7 @@ Requires: google-api-python-client
 Requires: greenlet
 Requires: httplib2
 Requires: iso8601
+Requires: keystonemiddleware
 Requires: lxml
 Requires: oauth2client
 Requires: os-brick
@@ -69,9 +72,9 @@ Requires: stevedore
 Requires: suds-jurko
 Requires: taskflow
 Requires: tooz
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 Patch1: 0001-default-config.patch
@@ -81,15 +84,18 @@ Patch4: 0004-move-rootwrap-location.patch
 Patch5: 0006-Set-default-syslog.patch
 
 %description
-This is a database migration repository.
-More information at:
-https://github.com/openstack/sqlalchemy-migrate
+CINDER
+        ======
+        
+        You have come across a storage service for an open cloud computing service.
+        It has identified itself as `Cinder`. It was abstracted from the Nova project.
 
 %package bin
 Summary: bin components for the cinder package.
 Group: Binaries
 Requires: cinder-data
 Requires: cinder-config
+Requires: cinder-license
 
 %description bin
 bin components for the cinder package.
@@ -111,12 +117,30 @@ Group: Data
 data components for the cinder package.
 
 
+%package license
+Summary: license components for the cinder package.
+Group: Default
+
+%description license
+license components for the cinder package.
+
+
 %package python
 Summary: python components for the cinder package.
 Group: Default
+Requires: cinder-python3
 
 %description python
 python components for the cinder package.
+
+
+%package python3
+Summary: python3 components for the cinder package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the cinder package.
 
 
 %prep
@@ -128,16 +152,21 @@ python components for the cinder package.
 %patch5 -p1
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489272080
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532217096
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489272080
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/cinder
+cp LICENSE %{buildroot}/usr/share/doc/cinder/LICENSE
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 mkdir -p %{buildroot}/usr/lib/tmpfiles.d
 install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/cinder.conf
 ## make_install_append content
@@ -187,6 +216,13 @@ install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinde
 /usr/share/defaults/sudo/sudoers.d/cinder
 /usr/share/defaults/tgt/conf.d/cinder.conf
 
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/cinder/LICENSE
+
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+
+%files python3
+%defattr(-,root,root,-)
+/usr/lib/python3*/*
