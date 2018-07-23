@@ -1,5 +1,5 @@
 PKG_NAME := cinder
-URL = http://tarballs.openstack.org/cinder/cinder-8.0.0.tar.gz
+URL = http://tarballs.openstack.org/cinder/cinder-13.0.0.0b2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
