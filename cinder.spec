@@ -6,7 +6,7 @@
 #
 Name     : cinder
 Version  : 13.0.0
-Release  : 35
+Release  : 36
 URL      : http://tarballs.openstack.org/cinder/cinder-13.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.0.tar.gz
 Source1  : cinder.tmpfiles
@@ -86,6 +86,7 @@ Requires: retrying
 Requires: rtslib-fb
 Requires: simplejson
 Requires: six
+Requires: sphinx-feature-classification
 Requires: sphinxcontrib-apidoc
 Requires: sqlalchemy-migrate
 Requires: stevedore
@@ -94,6 +95,7 @@ Requires: taskflow
 Requires: tooz
 BuildRequires : buildreq-distutils3
 BuildRequires : pbr
+BuildRequires : sphinx-feature-classification
 Patch1: 0001-default-config.patch
 Patch2: 0002-cinder-sudoers-entry.patch
 Patch3: 0003-Add-cinder-s-tgt-config.patch
@@ -170,7 +172,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536548971
+export SOURCE_DATE_EPOCH=1536551672
 python3 setup.py build -b py3
 
 %install
