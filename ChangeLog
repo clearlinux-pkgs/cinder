@@ -1,6 +1,31 @@
 CHANGES
 =======
 
+13.0.1
+------
+
+* Allow using forward slashes in metadata
+* Imported Translations from Zanata
+* VMAX Rocky driver - correcting an incorrect backport
+* nimble storage: support for force detach
+* Remove cinder-tox-compliance job
+* NetApp SolidFire: Fix force\_detach
+* VMAX Rocky doc - version information
+* Fix backup driver configuration examples in the documetation
+* Fix image volume cache max size and max count limits
+* 3PAR: Update Storage Driver docs
+* NetApp SolidFire: Fix CG snapshot deletion
+* Rename devstack-plugin-ceph jobs
+* VMAX Driver - Initiator retrieval short hostname fix
+* import zuul job settings from project-config
+* NetApp SolidFire: Fix NetApp SolidFire SSL option
+* Imported Translations from Zanata
+* 3PAR: Added retries on volume deletion
+* Fix IPv6 for Cinder NetApp ONTAP drivers
+* Fixed invalid number of arguments bug in ScaleIO driver
+* LVM: Disable multiattach for LIO iSCSI target
+* VMAX doc - important known issue
+
 13.0.0
 ------
 
