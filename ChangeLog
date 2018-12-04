@@ -1,6 +1,18 @@
 CHANGES
 =======
 
+13.0.2
+------
+
+* Change the matching method of the backup driver
+* Add newline to end of api-ref/source/v3/index.rst
+* cinder-manage online\_data\_migrations fixes
+* Fix non iSCSI attach serialization
+* Handle rbd.OSError on broken RBD image
+* Fix multiattach set to false after retype
+* Forbidden to revert volume to a different size snapshot
+* PY3: Ensure rados.Object.read/write use byte data
+
 13.0.1
 ------
 

@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : cinder
-Version  : 13.0.1
-Release  : 39
-URL      : http://tarballs.openstack.org/cinder/cinder-13.0.1.tar.gz
-Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.1.tar.gz
+Version  : 13.0.2
+Release  : 40
+URL      : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz
+Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz
 Source1  : cinder.tmpfiles
-Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.1.tar.gz.asc
+Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz.asc
 Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
@@ -160,7 +160,7 @@ python3 components for the cinder package.
 
 
 %prep
-%setup -q -n cinder-13.0.1
+%setup -q -n cinder-13.0.2
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -172,7 +172,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541265717
+export SOURCE_DATE_EPOCH=1543919294
 python3 setup.py build
 
 %install
