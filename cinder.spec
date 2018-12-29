@@ -6,7 +6,7 @@
 #
 Name     : cinder
 Version  : 13.0.2
-Release  : 40
+Release  : 41
 URL      : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz
 Source1  : cinder.tmpfiles
