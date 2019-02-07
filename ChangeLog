@@ -1,10 +1,36 @@
 CHANGES
 =======
 
+13.0.3
+------
+
+* Pass image\_id to ImageDownloadFailed
+* Avoid using 'truncate' on Windows
+* Fix permissions with NFS-backed snapshots and backups
+* add resource filters to the included data\_files
+* VMAX driver doc - notification of fix on AFA OS upgrade issue
+* VMAX driver doc - notification of hybrid deprecation
+* Allow to use \_max qos option together with per\_gb
+* cinder-volume: Stop masking IOError different than ENOSPC
+* Retry on DBDeadLock affecting worker updates
+* PowerMax driver doc - clarifying SE and Unisphere support
+* Fix \_per\_gb\_min usage with \_per\_gb
+* An alternate way to fix retype notifier test case
+* Set message property in ImageDownloadFailed
+* Add secret=true to fixed\_key configuration parameter
+* Ensure image utils don't block greenthreads
+* VMAX Driver - VMAX OS Upgrade Bug
+* SF ensure the correct volume is deleted
+* Stop cleaning images to be deleted in remotefs driver
+* Correct default policy file
+* lvm: Avoid premature calls to terminate\_connection for muiltiattach vols
+* VMAX driver - releasenote fix
+
 13.0.2
 ------
 
 * Change the matching method of the backup driver
+* Handling unexpected python error "NoneType object is not iterable"
 * Add newline to end of api-ref/source/v3/index.rst
 * cinder-manage online\_data\_migrations fixes
 * Fix non iSCSI attach serialization

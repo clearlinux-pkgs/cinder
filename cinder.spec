@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : cinder
-Version  : 13.0.2
-Release  : 41
-URL      : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz
-Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz
+Version  : 13.0.3
+Release  : 42
+URL      : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz
+Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz
 Source1  : cinder.tmpfiles
-Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz.asc
+Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz.asc
 Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
@@ -103,8 +103,14 @@ Patch4: 0004-move-rootwrap-location.patch
 Patch5: 0006-Set-default-syslog.patch
 
 %description
-Team and repository tags
-        ========================
+# block-box
+Standalone Cinder Containerized using Docker Compose
+## Cinder
+Provides Block Storage as a service as part of the OpenStack Project.
+This project deploys Cinder in containers using docker-compose and
+also enabled the use of Cinder's noauth option which eliminates the
+need for keystone.  One could also easily add keystone into the
+compose file along with an init script to set up endpoints.
 
 %package bin
 Summary: bin components for the cinder package.
@@ -160,7 +166,7 @@ python3 components for the cinder package.
 
 
 %prep
-%setup -q -n cinder-13.0.2
+%setup -q -n cinder-13.0.3
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -172,7 +178,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543919294
+export SOURCE_DATE_EPOCH=1549509644
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
@@ -219,6 +226,7 @@ install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinde
 %files config
 %defattr(-,root,root,-)
 %config /usr/etc/cinder/api-paste.ini
+%config /usr/etc/cinder/resource_filters.json
 %config /usr/etc/cinder/rootwrap.conf
 %config /usr/etc/cinder/rootwrap.d/volume.filters
 /usr/lib/tmpfiles.d/cinder.conf
