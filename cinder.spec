@@ -6,7 +6,7 @@
 #
 Name     : cinder
 Version  : 13.0.3
-Release  : 42
+Release  : 43
 URL      : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz
 Source1  : cinder.tmpfiles
@@ -25,18 +25,14 @@ Requires: Paste
 Requires: PasteDeploy
 Requires: Routes
 Requires: SQLAlchemy
-Requires: Sphinx
 Requires: WebOb
 Requires: castellan
 Requires: cryptography
 Requires: cursive
-Requires: ddt
 Requires: decorator
 Requires: defusedxml
-Requires: doc8
 Requires: enum34
 Requires: eventlet
-Requires: fixtures
 Requires: google-api-python-client
 Requires: greenlet
 Requires: httplib2
@@ -47,8 +43,6 @@ Requires: keystoneauth1
 Requires: keystonemiddleware
 Requires: lxml
 Requires: oauth2client
-Requires: openstackdocstheme
-Requires: os-api-ref
 Requires: os-brick
 Requires: os-win
 Requires: oslo.concurrency
@@ -76,18 +70,15 @@ Requires: pyparsing
 Requires: python-barbicanclient
 Requires: python-glanceclient
 Requires: python-keystoneclient
-Requires: python-mock
 Requires: python-novaclient
 Requires: python-swiftclient
 Requires: pytz
-Requires: reno
 Requires: requests
 Requires: retrying
 Requires: rtslib-fb
 Requires: simplejson
 Requires: six
 Requires: sphinx-feature-classification
-Requires: sphinxcontrib-apidoc
 Requires: sqlalchemy-migrate
 Requires: stevedore
 Requires: suds-jurko
@@ -178,7 +169,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549509644
+export SOURCE_DATE_EPOCH=1551032183
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
