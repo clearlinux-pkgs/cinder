@@ -1,6 +1,22 @@
 CHANGES
 =======
 
+13.0.4
+------
+
+* NetApp SolidFire: Fix multi-attach volume deletion
+* Fix Support Matrix - Pure does support Multiattach
+* Fix Snapshot object metadata loading
+* VNX: update sg in cache
+* Restore VMAX unit test mock
+* VMware: Fix revert-to-snapshot
+* Fix api-ref title levels and index
+* Fix group availability zone-backend host mismatch
+* Fix version return incorrect when endpoint url end without /
+* Fix for auth version change in Brcd HTTP
+* VNX Driver: delete\_hba() instead of remove\_hba()
+* Fix for HPE MSA 2050 login failures
+
 13.0.3
 ------
 
@@ -8,6 +24,7 @@ CHANGES
 * Avoid using 'truncate' on Windows
 * Fix permissions with NFS-backed snapshots and backups
 * add resource filters to the included data\_files
+* Delete related encryption provider when a volume type is deleting
 * VMAX driver doc - notification of fix on AFA OS upgrade issue
 * VMAX driver doc - notification of hybrid deprecation
 * Allow to use \_max qos option together with per\_gb

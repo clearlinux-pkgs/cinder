@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : cinder
-Version  : 13.0.3
-Release  : 43
-URL      : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz
-Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz
+Version  : 13.0.4
+Release  : 44
+URL      : http://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz
+Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz
 Source1  : cinder.tmpfiles
-Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz.asc
+Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz.asc
 Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
@@ -157,7 +157,7 @@ python3 components for the cinder package.
 
 
 %prep
-%setup -q -n cinder-13.0.3
+%setup -q -n cinder-13.0.4
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -169,11 +169,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551032183
+export SOURCE_DATE_EPOCH=1553608112
+export LDFLAGS="${LDFLAGS} -fno-lto"
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cinder
 cp LICENSE %{buildroot}/usr/share/package-licenses/cinder/LICENSE
