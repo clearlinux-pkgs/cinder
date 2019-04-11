@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : cinder
-Version  : 13.0.4
-Release  : 44
-URL      : http://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz
-Source0  : http://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz
+Version  : 14.0.0
+Release  : 45
+URL      : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz
+Source0  : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz
 Source1  : cinder.tmpfiles
-Source99 : http://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz.asc
+Source99 : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz.asc
 Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
@@ -20,7 +20,6 @@ Requires: cinder-data = %{version}-%{release}
 Requires: cinder-license = %{version}-%{release}
 Requires: cinder-python = %{version}-%{release}
 Requires: cinder-python3 = %{version}-%{release}
-Requires: Babel
 Requires: Paste
 Requires: PasteDeploy
 Requires: Routes
@@ -59,6 +58,7 @@ Requires: oslo.reports
 Requires: oslo.rootwrap
 Requires: oslo.serialization
 Requires: oslo.service
+Requires: oslo.upgradecheck
 Requires: oslo.utils
 Requires: oslo.versionedobjects
 Requires: oslo.vmware
@@ -76,7 +76,6 @@ Requires: pytz
 Requires: requests
 Requires: retrying
 Requires: rtslib-fb
-Requires: simplejson
 Requires: six
 Requires: sphinx-feature-classification
 Requires: sqlalchemy-migrate
@@ -157,7 +156,7 @@ python3 components for the cinder package.
 
 
 %prep
-%setup -q -n cinder-13.0.4
+%setup -q -n cinder-14.0.0
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -169,8 +168,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1553608112
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1554946909
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -212,6 +210,7 @@ install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinde
 /usr/bin/cinder-rootwrap
 /usr/bin/cinder-rtstool
 /usr/bin/cinder-scheduler
+/usr/bin/cinder-status
 /usr/bin/cinder-volume
 /usr/bin/cinder-volume-usage-audit
 /usr/bin/cinder-wsgi
