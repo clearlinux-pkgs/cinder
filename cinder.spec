@@ -6,7 +6,7 @@
 #
 Name     : cinder
 Version  : 14.0.0
-Release  : 45
+Release  : 46
 URL      : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz
 Source1  : cinder.tmpfiles
