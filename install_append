@@ -1,4 +1,6 @@
 install -d -m 755 %{buildroot}/usr/share/defaults/cinder
+mv %{buildroot}/usr/etc/cinder  %{buildroot}/usr/share/defaults/cinder
+
 install -p -D -m 644 etc/cinder/*.conf %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/*.ini %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/*.json %{buildroot}/usr/share/defaults/cinder/

@@ -6,7 +6,7 @@
 #
 Name     : cinder
 Version  : 14.0.0
-Release  : 46
+Release  : 47
 URL      : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz
 Source1  : cinder.tmpfiles
@@ -83,9 +83,70 @@ Requires: stevedore
 Requires: suds-jurko
 Requires: taskflow
 Requires: tooz
+BuildRequires : Paste
+BuildRequires : PasteDeploy
+BuildRequires : Routes
+BuildRequires : SQLAlchemy
+BuildRequires : WebOb
 BuildRequires : buildreq-distutils3
+BuildRequires : castellan
+BuildRequires : cryptography
+BuildRequires : cursive
+BuildRequires : decorator
+BuildRequires : defusedxml
+BuildRequires : enum34
+BuildRequires : eventlet
+BuildRequires : google-api-python-client
+BuildRequires : greenlet
+BuildRequires : httplib2
+BuildRequires : ipaddress
+BuildRequires : iso8601
+BuildRequires : jsonschema
+BuildRequires : keystoneauth1
+BuildRequires : keystonemiddleware
+BuildRequires : lxml
+BuildRequires : oauth2client
+BuildRequires : os-brick
+BuildRequires : os-win
+BuildRequires : oslo.concurrency
+BuildRequires : oslo.config
+BuildRequires : oslo.context
+BuildRequires : oslo.db
+BuildRequires : oslo.i18n
+BuildRequires : oslo.log
+BuildRequires : oslo.messaging
+BuildRequires : oslo.middleware
+BuildRequires : oslo.policy
+BuildRequires : oslo.privsep
+BuildRequires : oslo.reports
+BuildRequires : oslo.rootwrap
+BuildRequires : oslo.serialization
+BuildRequires : oslo.service
+BuildRequires : oslo.upgradecheck
+BuildRequires : oslo.utils
+BuildRequires : oslo.versionedobjects
+BuildRequires : oslo.vmware
+BuildRequires : osprofiler
+BuildRequires : paramiko
 BuildRequires : pbr
+BuildRequires : psutil
+BuildRequires : pyparsing
+BuildRequires : python-barbicanclient
+BuildRequires : python-glanceclient
+BuildRequires : python-keystoneclient
+BuildRequires : python-novaclient
+BuildRequires : python-swiftclient
+BuildRequires : pytz
+BuildRequires : requests
+BuildRequires : retrying
+BuildRequires : rtslib-fb
+BuildRequires : six
 BuildRequires : sphinx-feature-classification
+BuildRequires : sqlalchemy-migrate
+BuildRequires : stevedore
+BuildRequires : suds-jurko
+BuildRequires : taskflow
+BuildRequires : tooz
 Patch1: 0001-default-config.patch
 Patch2: 0002-cinder-sudoers-entry.patch
 Patch3: 0003-Add-cinder-s-tgt-config.patch
@@ -168,7 +229,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554946909
+export SOURCE_DATE_EPOCH=1559833046
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -186,6 +254,7 @@ mkdir -p %{buildroot}/usr/lib/tmpfiles.d
 install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/cinder.conf
 ## install_append content
 install -d -m 755 %{buildroot}/usr/share/defaults/cinder
+mv %{buildroot}/usr/etc/cinder  %{buildroot}/usr/share/defaults/cinder
 install -p -D -m 644 etc/cinder/*.conf %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/*.ini %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/*.json %{buildroot}/usr/share/defaults/cinder/
@@ -217,10 +286,6 @@ install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinde
 
 %files config
 %defattr(-,root,root,-)
-%config /usr/etc/cinder/api-paste.ini
-%config /usr/etc/cinder/resource_filters.json
-%config /usr/etc/cinder/rootwrap.conf
-%config /usr/etc/cinder/rootwrap.d/volume.filters
 /usr/lib/tmpfiles.d/cinder.conf
 
 %files data
@@ -230,6 +295,10 @@ install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinde
 /usr/share/defaults/cinder/api-httpd.conf
 /usr/share/defaults/cinder/api-paste.ini
 /usr/share/defaults/cinder/cinder.conf
+/usr/share/defaults/cinder/cinder/api-paste.ini
+/usr/share/defaults/cinder/cinder/resource_filters.json
+/usr/share/defaults/cinder/cinder/rootwrap.conf
+/usr/share/defaults/cinder/cinder/rootwrap.d/volume.filters
 /usr/share/defaults/cinder/logging_sample.conf
 /usr/share/defaults/cinder/resource_filters.json
 /usr/share/defaults/sudo/sudoers.d/cinder
