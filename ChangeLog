@@ -1,6 +1,28 @@
 CHANGES
 =======
 
+14.0.1
+------
+
+* Fix assertion methods in a unit test
+* PowerMax docs - add information on new and existing functionality
+* Add OS-SCH-HNT in extensions list
+* Remove Sheepdog tests from zuul config
+* [VNX] Fix test case issue
+* Add Upgrade Check for Drivers Removed in Stein
+* Add upgrade check for Windows iSCSI driver
+* Add upgrade check for presence of policy.json file
+* Fix "connector=None" issue in Kaminario drivers
+* lvm: Only use initiators when comparing connector dicts
+* Make sure we install cinder requirements during the correct tox phase
+* 3PAR: Provide an option duing creation of volume from snapshot
+* Fix swift backup driver crashing during service startup
+* OpenDev Migration Patch
+* NetApp: Return all iSCSI targets-portals
+* Add upgrade checker for backup driver path
+* Remove scanning upgrade checker from opts generation
+* Add NetApp E-Series Driver to Removal List
+
 14.0.0
 ------
 
