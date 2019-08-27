@@ -1,4 +1,4 @@
-From 36d7a601c8f8d682b05da5fbc71afba31caa5d29 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Alberto Murillo <alberto.murillo.silva@intel.com>
 Date: Wed, 1 Apr 2015 15:58:01 -0600
 Subject: [PATCH] cinder sudoers entry
@@ -16,6 +16,3 @@ index 0000000..518d20c
 +++ b/etc/sudoers.d/cinder.sudoers
 @@ -0,0 +1 @@
 +cinder ALL = (root) NOPASSWD: /usr/bin/cinder-rootwrap /usr/share/cinder/rootwrap.conf *
--- 
-2.1.0
-

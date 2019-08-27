@@ -6,11 +6,11 @@
 #
 Name     : cinder
 Version  : 14.0.1
-Release  : 49
+Release  : 50
 URL      : http://tarballs.openstack.org/cinder/cinder-14.0.1.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-14.0.1.tar.gz
 Source1  : cinder.tmpfiles
-Source99 : http://tarballs.openstack.org/cinder/cinder-14.0.1.tar.gz.asc
+Source2 : http://tarballs.openstack.org/cinder/cinder-14.0.1.tar.gz.asc
 Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
@@ -151,17 +151,12 @@ Patch1: 0001-default-config.patch
 Patch2: 0002-cinder-sudoers-entry.patch
 Patch3: 0003-Add-cinder-s-tgt-config.patch
 Patch4: 0004-move-rootwrap-location.patch
-Patch5: 0006-Set-default-syslog.patch
+Patch5: 0005-Set-default-syslog-disable-logging-to-var-log.patch
+Patch6: 0006-Unfreeze-jsonschema.patch
 
 %description
-# block-box
-Standalone Cinder Containerized using Docker Compose
-## Cinder
-Provides Block Storage as a service as part of the OpenStack Project.
-This project deploys Cinder in containers using docker-compose and
-also enabled the use of Cinder's noauth option which eliminates the
-need for keystone.  One could also easily add keystone into the
-compose file along with an init script to set up endpoints.
+Team and repository tags
+        ========================
 
 %package bin
 Summary: bin components for the cinder package.
@@ -223,13 +218,14 @@ python3 components for the cinder package.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562853315
+export SOURCE_DATE_EPOCH=1566919667
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

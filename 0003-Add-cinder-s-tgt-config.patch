@@ -1,4 +1,4 @@
-From 3aefcf515d41bb6e2c098150e5be6e5b425ebd48 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Alberto Murillo <alberto.murillo.silva@intel.com>
 Date: Thu, 2 Apr 2015 11:46:08 -0600
 Subject: [PATCH] Add cinder's tgt config
@@ -11,11 +11,8 @@ Signed-off-by: Alberto Murillo <alberto.murillo.silva@intel.com>
 
 diff --git a/cinder.tgt b/cinder.tgt
 new file mode 100644
-index 0000000..b61aa4a
+index 0000000..444eb00
 --- /dev/null
 +++ b/cinder.tgt
 @@ -0,0 +1 @@
 +include /var/lib/cinder/volumes/*
--- 
-2.1.0
-

@@ -2,6 +2,5 @@
 0002-cinder-sudoers-entry.patch
 0003-Add-cinder-s-tgt-config.patch
 0004-move-rootwrap-location.patch
-# Patch no needed anymore https://blueprints.launchpad.net/cinder/+spec/reusing-wsgi-from-oslo.service
-# 0005-Use-oslo-to-find-config-files.patch
-0006-Set-default-syslog.patch
+0005-Set-default-syslog-disable-logging-to-var-log.patch
+0006-Unfreeze-jsonschema.patch

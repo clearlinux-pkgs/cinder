@@ -1,10 +1,10 @@
-From 1cbad5ffe2cd80e54a915bd0860ebf09058e7f6e Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Alberto Murillo <alberto.murillo.silva@intel.com>
 Date: Wed, 27 May 2015 17:18:40 -0500
 Subject: [PATCH] default-config
 
 ---
- etc/cinder/cinder.conf.sample | 2986 +++++++++++++++++++++++++++++++++++++++++
+ etc/cinder/cinder.conf.sample | 2986 +++++++++++++++++++++++++++++++++
  1 file changed, 2986 insertions(+)
  create mode 100644 etc/cinder/cinder.conf.sample
 
@@ -3000,6 +3000,3 @@ index 0000000..84e1639
 +
 +[oslo_concurrency]
 +lock_path = /run/lock/cinder
--- 
-2.1.0
-
