@@ -1,6 +1,25 @@
 CHANGES
 =======
 
+14.0.2
+------
+
+* Google backup: correct string encoding between py 2 and 3
+* Fix up test\_snapshot notify tests
+* Add context to cloning snapshots in remotefs driver
+* Don't allow retype to encrypted+multiattach type
+* Dell EMC SC: Handle the mappings of multiattached volume
+* 3PAR: Add config for NSP single path attach
+* Fix NFS volume retype with migrate
+* Fix LVM IPv6 target portals
+* NetApp ONTAP: Fix JSON serialization error on EMS logs
+* Fix ceph: only close rbd image after snapshot iteration is finished
+* Move DotHill release note to correct location
+* Fixing 404's and broken links
+* Fix DetachedInstanceError for VolumeAttachment
+* Prevent double-attachment race in attachment\_reserve
+* doc: Fix rbd driver marked support multiattach
+
 14.0.1
 ------
 
