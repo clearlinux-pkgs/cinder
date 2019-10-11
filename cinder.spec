@@ -6,7 +6,7 @@
 #
 Name     : cinder
 Version  : 14.0.2
-Release  : 51
+Release  : 52
 URL      : http://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz
 Source1  : cinder.tmpfiles
@@ -30,7 +30,6 @@ Requires: cryptography
 Requires: cursive
 Requires: decorator
 Requires: defusedxml
-Requires: enum34
 Requires: eventlet
 Requires: google-api-python-client
 Requires: greenlet
@@ -94,7 +93,6 @@ BuildRequires : cryptography
 BuildRequires : cursive
 BuildRequires : decorator
 BuildRequires : defusedxml
-BuildRequires : enum34
 BuildRequires : eventlet
 BuildRequires : google-api-python-client
 BuildRequires : greenlet
@@ -155,14 +153,8 @@ Patch5: 0005-Set-default-syslog-disable-logging-to-var-log.patch
 Patch6: 0006-Unfreeze-jsonschema.patch
 
 %description
-# block-box
-Standalone Cinder Containerized using Docker Compose
-## Cinder
-Provides Block Storage as a service as part of the OpenStack Project.
-This project deploys Cinder in containers using docker-compose and
-also enabled the use of Cinder's noauth option which eliminates the
-need for keystone.  One could also easily add keystone into the
-compose file along with an init script to set up endpoints.
+Team and repository tags
+        ========================
 
 %package bin
 Summary: bin components for the cinder package.
@@ -231,8 +223,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570378986
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1570829670
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -248,8 +239,8 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cinder
-cp LICENSE %{buildroot}/usr/share/package-licenses/cinder/LICENSE
-cp contrib/block-box/LICENSE %{buildroot}/usr/share/package-licenses/cinder/contrib_block-box_LICENSE
+cp %{_builddir}/cinder-14.0.2/LICENSE %{buildroot}/usr/share/package-licenses/cinder/294b43b2cec9919063be1a3b49e8722648424779
+cp %{_builddir}/cinder-14.0.2/contrib/block-box/LICENSE %{buildroot}/usr/share/package-licenses/cinder/92170cdc034b2ff819323ff670d3b7266c8bffcd
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -310,8 +301,8 @@ install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinde
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/cinder/LICENSE
-/usr/share/package-licenses/cinder/contrib_block-box_LICENSE
+/usr/share/package-licenses/cinder/294b43b2cec9919063be1a3b49e8722648424779
+/usr/share/package-licenses/cinder/92170cdc034b2ff819323ff670d3b7266c8bffcd
 
 %files python
 %defattr(-,root,root,-)
