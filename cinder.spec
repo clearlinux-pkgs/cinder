@@ -6,11 +6,11 @@
 #
 Name     : cinder
 Version  : 14.0.2
-Release  : 53
+Release  : 54
 URL      : http://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz
 Source0  : http://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz
 Source1  : cinder.tmpfiles
-Source2 : http://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz.asc
+Source2  : http://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz.asc
 Summary  : OpenStack Block Storage
 Group    : Development/Tools
 License  : Apache-2.0
@@ -204,6 +204,68 @@ python components for the cinder package.
 Summary: python3 components for the cinder package.
 Group: Default
 Requires: python3-core
+Provides: pypi(cinder)
+Requires: pypi(castellan)
+Requires: pypi(cryptography)
+Requires: pypi(cursive)
+Requires: pypi(decorator)
+Requires: pypi(defusedxml)
+Requires: pypi(eventlet)
+Requires: pypi(google_api_python_client)
+Requires: pypi(greenlet)
+Requires: pypi(httplib2)
+Requires: pypi(iso8601)
+Requires: pypi(jsonschema)
+Requires: pypi(keystoneauth1)
+Requires: pypi(keystonemiddleware)
+Requires: pypi(lxml)
+Requires: pypi(oauth2client)
+Requires: pypi(os_brick)
+Requires: pypi(os_win)
+Requires: pypi(oslo.concurrency)
+Requires: pypi(oslo.config)
+Requires: pypi(oslo.context)
+Requires: pypi(oslo.db)
+Requires: pypi(oslo.i18n)
+Requires: pypi(oslo.log)
+Requires: pypi(oslo.messaging)
+Requires: pypi(oslo.middleware)
+Requires: pypi(oslo.policy)
+Requires: pypi(oslo.privsep)
+Requires: pypi(oslo.reports)
+Requires: pypi(oslo.rootwrap)
+Requires: pypi(oslo.serialization)
+Requires: pypi(oslo.service)
+Requires: pypi(oslo.upgradecheck)
+Requires: pypi(oslo.utils)
+Requires: pypi(oslo.versionedobjects)
+Requires: pypi(oslo.vmware)
+Requires: pypi(osprofiler)
+Requires: pypi(paramiko)
+Requires: pypi(paste)
+Requires: pypi(pastedeploy)
+Requires: pypi(pbr)
+Requires: pypi(prettytable)
+Requires: pypi(psutil)
+Requires: pypi(pyparsing)
+Requires: pypi(python_barbicanclient)
+Requires: pypi(python_glanceclient)
+Requires: pypi(python_keystoneclient)
+Requires: pypi(python_novaclient)
+Requires: pypi(python_swiftclient)
+Requires: pypi(pytz)
+Requires: pypi(requests)
+Requires: pypi(retrying)
+Requires: pypi(routes)
+Requires: pypi(rtslib_fb)
+Requires: pypi(six)
+Requires: pypi(sqlalchemy)
+Requires: pypi(sqlalchemy_migrate)
+Requires: pypi(stevedore)
+Requires: pypi(suds_jurko)
+Requires: pypi(taskflow)
+Requires: pypi(tooz)
+Requires: pypi(webob)
 
 %description python3
 python3 components for the cinder package.
@@ -211,6 +273,7 @@ python3 components for the cinder package.
 
 %prep
 %setup -q -n cinder-14.0.2
+cd %{_builddir}/cinder-14.0.2
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -223,7 +286,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570829670
+export SOURCE_DATE_EPOCH=1584642777
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -250,17 +313,22 @@ install -m 0644 %{SOURCE1} %{buildroot}/usr/lib/tmpfiles.d/cinder.conf
 ## install_append content
 install -d -m 755 %{buildroot}/usr/share/defaults/cinder
 mv %{buildroot}/usr/etc/cinder  %{buildroot}/usr/share/defaults/cinder
+
 install -p -D -m 644 etc/cinder/*.conf %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/*.ini %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/*.json %{buildroot}/usr/share/defaults/cinder/
 install -p -D -m 644 etc/cinder/cinder.conf.sample %{buildroot}/usr/share/defaults/cinder/cinder.conf
+
 install -d -m 755 %{buildroot}/usr/share/cinder/rootwrap.d
 mv %{buildroot}/usr/share/defaults/cinder/rootwrap.conf %{buildroot}/usr/share/cinder/
 install -p -D -m 640 etc/cinder/rootwrap.d/*.filters %{buildroot}/usr/share/cinder/rootwrap.d/
+
 install -d -m 750 %{buildroot}/usr/share/defaults/sudo/sudoers.d
 install -p -D -m 440 etc/sudoers.d/cinder.sudoers %{buildroot}/usr/share/defaults/sudo/sudoers.d/cinder
+
 install -d -m 750 %{buildroot}/usr/share/defaults/tgt/conf.d/
 install -p -D -m 640 cinder.tgt %{buildroot}/usr/share/defaults/tgt/conf.d/cinder.conf
+
 ## install_append end
 
 %files
