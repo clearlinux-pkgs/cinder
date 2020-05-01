@@ -1,63 +1,378 @@
 CHANGES
 =======
 
-14.0.2
+15.1.0
 ------
 
-* Google backup: correct string encoding between py 2 and 3
+* RBD: fix volume reference handling in clone logic
+* [Unity] Fix TypeError for test case test\_delete\_host\_wo\_lock
+* Add new license scheme for Flashsystem9000 series
+* ChunkedBackupDriver: Freeing memory on restore
+* Cinder backup export broken
+* Support volume transfer \`name\` filters
+* Add cryptsetup to bindep.txt
+* NEC driver: fix migrate/retype an in-use volume
+* PowerMax Docs -  corrections and improvements
+* Tell reno to ignore the kilo branch
+* Install all requirements in docs builds
+* Skip cryptsetup password quality checking
+* Configurable timeout of the QEMU img conversion
+* 3PAR: Revert flag for Active/Active High Availability Support
+* RBD: catch argument exceptions when configuring multiattach
+* Fix: Create new cache entry when xtremio reaches snap limit
+* Make volume soft delete more thorough
+* DS8k Cinder Driver support Python3
+* Mark storwize driver supported
+* PowerMax Driver - retype attached replication fix
+* PowerMax Driver - Volume group delete failure
+
+15.0.1
+------
+
+* Tests: Isolate rbd deferred deletion tests
+* Fix Train release note prelude
+* PowerMax Driver - QoS calculation failure
+* NEC driver: fix a non-disruptive backup error
+* NEC driver: fix an undefined variable
+* NEC driver: replace deprecated xml library
+* Increase cpu limit for image conversion
+* iSCSI driver initialization should fail for Primera backend
+* RemoteFS: Use dest vol id instead of source id in snapshot temp name
+* Fix remotefs clone volume locking
+* Fix VxFlexOS documentation
+* Pure Storage - Fix disconnect error in clustered environments
+* 3PAR: Add HPE Primera related information
+* Switch to opensuse-15 nodeset
+* Pure: Ensure generated volume name does not exceed 63 characters
+* Move hacking checks to tests dir
+
+15.0.0
+------
+
+* NetApp SolidFire: Add options for replication mode
+* Imported Translations from Zanata
+* NetApp SolidFire: Fix replication
+* 3PAR: For Peer Persistence, add policy options in RCG
+* PowerMax Docs -  New features and supported software
+* Fix: Online migrations for untyped volumes/snapshots
+* Add "service token" documentation
+* Tests: Fix retype unit test InvalidUUID warning
+* PowerMax Docs -  Short host and port group name changes
+* PowerMax Driver - ODE Capabilities Fix
+* Mark Virtuozzo Driver Unsupported
+* Add doc page for accelerate image compression
+* Update TOX/UPPER\_CONSTRAINTS\_FILE for stable/train
+* Update .gitreview for stable/train
+
+15.0.0.0rc1
+-----------
+
+* Releasenote followup: Untyped to default volume type
+* PowerMax Driver - Volume Retype Replication fix
+* PowerMax Driver - Metro Volume Metadata change
+* Add "deletion policy" property to uploaded images
+* NEC Driver: Storage assist retype and a bugfix
+* HPE 3PAR: Updated supported operations for multiattach feature
+* Make sure stale image metadata is not used
+* PowerMax Driver - Unisphere version check
+* PowerMax Driver - Debug Metadata Fix
+* Untyped to Default Volume Type
+* NEC Driver: Support revert to snapshot
+* Unity: Add replication support
+* Delete unused key when rekeying volume
+* Leverage hw accelerator in image compression
+* Tests: Fix test\_volume.py import ordering
+* Rekey volume on clone
+* 3PAR: Add Peer Persistence support
+* Denote max microversion for Train
+* Pylint: use -j 0 arg
+* target/spdknvmf: Add max\_queue\_depth configuration parameter
+* NEC Driver: allow more than 4 iSCSI portals
+* Zadara VPSA: Move to API access key authentication
 * Fix up test\_snapshot notify tests
-* Add context to cloning snapshots in remotefs driver
-* Don't allow retype to encrypted+multiattach type
+* Continue renaming of volume\_utils (drivers)
+* Continue renaming volume\_utils (core)
+* Rename volume/utils.py to volume/volume\_utils.py
+* NEC Driver: Support multi-attach
+* Address reno nit for ZFSSA deprecation
+* StorPool: update the driver requirements
+* Mark the StorPool driver as supported again
+* Advertise some of the StorPool driver's capabilities
+* Mark HPE LeftHand driver as unsupported
+* Fix online data migrations
+* Blacklist eventlet 0.25.0
+* PowerMax Driver - Revert to Snapshot Fix
+* Fix potential NameError of rc\_id
+* Google backup: correct string encoding between py 2 and 3
+* Mark Huawei Fusionstorage Driver Unsupported
+* Change PDF file name
+* Mark IBM GPFS Driver Unsupported
+* Unsupport IBM DS8k and XIV Drivers
+* Mark Oracle ZFSSA Drivers Unsupported
+* nova: use EndpointNotFound from keystoneauth1
+* Synology: Fix driver to be compatible with python3
+* Added information how to use JsonFilter
+* PowerMax Driver - Volume & Snapshot Metadata
+* PowerMax driver - check cylinder count of source and target volumes
+* PowerMax Driver - SnapVX NoCopy Mode
+* PowerMax Driver - Miscellaneous improvements to delete
+* PowerMax Driver - Fix for CI on replication\_device config
+* Add cinder-specs link to readme.rst
+* Fix fujitsu's wrong call to pywbem
 * Dell EMC SC: Handle the mappings of multiattached volume
-* 3PAR: Add config for NSP single path attach
+* Mark IBM Flashsystem Drivers Unsupported
+* Mark the IBM Storwize driver unsupported
+* Add pdf documentation build in tox
+* docs: update new driver review page
+* Don't allow retype to encrypted+multiattach type
+* Infortrend: Mock sleep in tests
+* NEC Driver: Python3 compatibility
+* Log exception info when objects fail to init
+* Move some code out of utils.py
+* Support Incremental Backup Completion In RBD
 * Fix NFS volume retype with migrate
+* [api-ref]Fix response example file of update\_type
+* Fix tox docs failure
+* [api-ref]Fix values of service-status in list-hosts
+* Ignore hacking rule H101
 * Fix LVM IPv6 target portals
-* NetApp ONTAP: Fix JSON serialization error on EMS logs
-* Fix ceph: only close rbd image after snapshot iteration is finished
-* Move DotHill release note to correct location
+* PowerMax Driver - feedback on tag removal
+* Address review comments for MacroSAN driver
+* 3PAR: Add config for NSP single path attach
+* Revert "3PAR: Provide new option to specify NSP for single path attachments"
+* Create Seagate driver from dothill driver
+* Fix "Fix upload volume to glance"
+* Tests: Combine similar encrypted volume tests w/ ddt
+* Rollback the quota\_usages table when failed to create a incremental backup
+* Docs: Jenkins is dead, long live Zuul
+* Cisco FC Zone Manager Driver - Python3.x support
+* Update docs building
+* Docs: Make links more robust
+* PowerMax Driver - Train San REST Port Removal
+* PowerMax Driver - QoS Utils Move
+* Add contributor notes on cinder-status checks
 * Fixing 404's and broken links
+* Update drivers documentation
+* Tighten unit test dict assertions
+* Fix upload volume to glance
+* Refactor API utilities into api\_utils.py
+* SF remove deprecated sf\_allow\_template\_caching
+* Update Veritas Access in Support Matrix
+* Mark Storpool Driver Unsupported
+* Fix ceph: only close rbd image after snapshot iteration is finished
+* Rsdlib changed providing\_pools interface
+* NetApp ONTAP: Fix JSON serialization error on EMS logs
 * Fix DetachedInstanceError for VolumeAttachment
+* Fix get\_driver\_options
+* Create extras for pypi install
+* Correcting typo in environment spelling
+* PowerMax Driver - Create Volume from SG Payload Change
 * Prevent double-attachment race in attachment\_reserve
+* Run 'tempest-ipv6-only' job in gate
+* 3PAR: Provide new option to specify NSP for single path attachments
+* Imported Translations from Zanata
+* Add MacroSAN cinder driver
+* Fix dothill multiattach support
+* Update api-ref location
+* Never skip jobs when .zuul.yaml is changed
+* Remove outdated scripts from tools/
+* [DOCFIX] Correct Cinder Backup Driver Option Value
+* Bump Pure Storage FC driver version number for Train
+* Re-add Infortrend Cinder volume driver
+* Replace "integrated-gate-py3" template with new "integrated-gate-storage"
+* Update NexentaStor5 driver
+* Compress images uploaded to Glance
+* HPE 3PAR - Fix detach of multiattach volumes
 * doc: Fix rbd driver marked support multiattach
-
-14.0.1
-------
-
+* Update support matrix entries for MSA and Lenovo arrays
+* Add policy sample file to gitignore
+* Add release note ignore for backport note
+* Move DotHill release note to correct location
+* Refactor use of encryption/image volume utils
+* Add context to cloning snapshots in remotefs driver
+* Cleanup api-ref sample files
+* Zadara VPSA: Fix driver force detach operation
+* Unity: force delete lun by default
+* Launch driver list generation with the same python interpreter
+* Blacklist sphinx 2.1.0 (autodoc bug)
+* Add support for VxFlex OS 3.0 to VxFlex OS driver
+* Add Active/Active HA to Support Matrix
+* Mark Datera driver unsupported
+* RBD: save and restore multiattach features
+* Add case: force delete snapshot
+* Add case: volume can't be reverted in in-use status
 * Fix assertion methods in a unit test
-* PowerMax docs - add information on new and existing functionality
+* Replace deprecated with\_lockmode with with\_for\_update
+* Fix kwargs passed to exception to get better format of error message
+* SF: Handle qos values on extend volume
+* Fix volume type quota defaults in quotas tests
+* Fix :param: in docstring
+* Run cinderlib functional tests on Ceph job
+* Remove the Nexenta Edge Driver
+* Remove the Veritas HyperScale Driver
+* Remove the Tintri Driver
+* remove support for deprecated options in VxFlex OS driver
+* rename ScaleIO driver to VxFlex OS
+* NetApp SolidFire: Adding new fields to scheduler data
+* Add key-manager to sevice catalog
+* NFS: Retry on intermittent mount failure
+* Add Contributor Docs for Upgrade Checks
+* Rename RSD doc file to match title for sorting
+* Update QoS and add Accuracy Note
+* Remove the DRBDManage Driver
 * Add OS-SCH-HNT in extensions list
-* Remove Sheepdog tests from zuul config
-* [VNX] Fix test case issue
+* Cinder RSD Driver
+* Replace assert to raise AssertionError
+* VMware: Enable thin volume from image on VVol
+* PowerMax Driver - Metro ODE Support
+* PowerMax Driver - PowerMax Formatted Vols Fix
+* PowerMax driver - Rapid TDEV Deallocation
+* Remove unused CG volume manager constants
+* Enable osprofiler for rally job
+* Small doc updates: canonical URLs, rally doc, etc
+* Re-enable new pycodestyle errors
+* Mark Veritas Access Driver Unsupported
+* Mark Prophetstor Driver Unsupported
+* Mark the Nimble Driver Unsupported
+* PowerMax driver - locking improvements
+* PowerMax driver - clone improvements
+* PowerMax driver - add 'target\_array\_model' to metadata
+* Docs: Add new driver review checklist
+* Revert "Implement volume capacity stats for VMware"
+* PowerMax driver -  changing from 9.0 to 9.1 REST endpoints
+* Add rbd secret\_uuid in secondary config
+* Bump hacking version to 1.1.x
+* Update Python 3 test runtimes for Train
+* Fix formatting issues in PowerMax docs
+* PowerMax docs - known issues with metro
+* Make py37 unit tests voting
+* move Dell EMC SC driver exceptions
 * Add Upgrade Check for Drivers Removed in Stein
 * Add upgrade check for Windows iSCSI driver
-* Add upgrade check for presence of policy.json file
+* move kaminario driver exceptions
+* Deprecate NestedDbQuotaDriver for nested quotas
+* move dothill exceptions
+* Mark the Sheepdog driver unsupported
+* move purestorage driver exceptions
+* move Hyperscale exceptions to driver
+* move storpool exception
+* Remove Sheepdog tests from zuul config
+* Drop use git.openstack.org for tox deps
 * Fix "connector=None" issue in Kaminario drivers
-* lvm: Only use initiators when comparing connector dicts
+* move cisco zonemanager exception
+* move vzstorage exceptions
+* move zadara exceptions
+* Bump bandit version
+* Move RBD driver exception to driver
+* LOG \_init\_vendor\_properites
+* HPE 3PAR-Added support for multiattach feature in hpe3par cinder driver
+* Pure Storage FlashArray iSCSI driver target CIDR support
+* [VNX] Fix test case issue
+* Remove BackupDriverWithVerify class
+* Cap sphinx for py2 to match global reqs
+* Handle collections.abc deprecations
+* move zfssa exception
+* Update NEC driver manual and support matrix
+* Correct typo in api-ref
+* Glob volume driver docs to auto sort
+* move netapp exception
+* move Nexenta exception
+* move NVMEOF exception to target file
+* move brocade zone manager exceptions
+* move 3par exception
+* move xtremio exceptions
+* Update doc for missed quotation marks
+* Remove driver requirements of removed drivers
+* Remove the repeated calls
+* Remove confusing annotation
+* VMware: Filter out datastore with 0 capacity
+* move solidfire driver exceptions
+* move smbfs exceptions
+* api-ref: mark migration\_status parameter as optional
+* Add python37 job
+* Removes python-linstor as a requirement for LINSTOR driver
 * Make sure we install cinder requirements during the correct tox phase
-* 3PAR: Provide an option duing creation of volume from snapshot
+* remove unused exceptions
+* move datera exception
+* move sheepdog exception
+* Use assertNotIn to check dict item
+* move Google backup exceptions
+* Removes drbdmanage as a requirement for drbdmanage driver
+* move synology driver exceptions
+* Remove unused exception
+* Move NVMET driver exceptions to driver file
+* [Trivial fix]Remove unnecessary slash
+* Do not use 'self' in classmethod
+* [Unity] Update doc for compressed volume support
+* Allow filtering on size for volume list
+* move GPFS driver exception to driver file
+* Compact DB migrations to Queens
+* Remove unneeded comment
+* Update Brocade FCZM driver's driver options
+* Fix invalid function name
+* Add user messages for some volume snapshot actions
+* Remove obsolete get\_backup\_driver functions
 * Fix swift backup driver crashing during service startup
+* Correct and optimize hpe3par tests
+* lvm: Only use initiators when comparing connector dicts
+* Update unit test debugging instructions for stestr
 * OpenDev Migration Patch
-* NetApp: Return all iSCSI targets-portals
+* Start release cycle checklist documentation
+* Remove docs for --allow-multiattach
+* Add missing ws seperator between words
+* PowerMax docs - add information on new and existing functionality
+* 3PAR: Provide an option duing creation of volume from snapshot
+* NFS: Log exception when update\_migrated\_volume fails
+* Drop use of git.openstack.org
+* Fix missing print format error
+* Rollback the volume\_types table when failed to update quota\_usages
+* Uncap jsonschema
+* Fix cinder-manage args --max\_count in docs
+* Use proper casing in backup\_compression\_algorithm doc
+* Remove DataCore volume drivers
+* Introduce config to supplement periodic\_interval
+* VNX: add option vnx\_async\_migrate
+* add libpq-dev to build psycopg2
+* Tests: Fix up test\_volume notify tests
+* Make backup\_compression\_algorithm case insensitive
+* Update the min version of tox
+* Update gate-irrelevant-files
+* Add upgrade check for presence of policy.json file
+* Allow reset-state to detach volume as per policy
+* Fix deprecation escape sequence errors under 3.6
+* Document behavior of message.create
+* Reserve migrations for DB backports
+* VNX: delete the LUN from VNX backend
 * Add upgrade checker for backup driver path
+* Remove non-exception from EXCEPTION\_DETAIL\_MAPPINGS
 * Remove scanning upgrade checker from opts generation
+* Fix code-block JSON format issues
+* Replace HTTP numeric codes with constants
+* Remove doc for Nova option that doesn't exist
+* Unity: Add consistent group support
 * Add NetApp E-Series Driver to Removal List
-
-14.0.0
-------
-
-* Handling filters in Generalized Filtering API
+* Doc: Mark last Stein API microversion
+* Raise eventlet lower-constraint to 0.22.0
 * Replace openstack.org git:// URLs with https://
-* Update UPPER\_CONSTRAINTS\_FILE for stable/stein
-* Update .gitreview for stable/stein
+* PowerMax Driver - In-Use Retype Path Fix
+* Run cinderlib functional tests on LVM-LIO job
+* Imported Translations from Zanata
+* Fix service\_uuid migration for volumes with no host
+* Update master for stable/stein
+* Synology: Add support for UC-Series model
 
 14.0.0.0rc1
 -----------
 
+* Handling filters in Generalized Filtering API
+* Automate generation of volume transfer api-ref samples
+* [NetApp] Casting block\_count to int before calling ONTAP API
 * Fix Support Matrix - Pure does support Multiattach
 * Gate Fix: Bumping versions in lower-constraints.txt
 * Fix VolumeAttachment is not bound to a Session
 * Modify the configuration mode of FusionStorage Cinder Driver
 * Automate generation of snapshots api-ref samples
+* Refactored NexentaStor5 driver
 * Adds revert to snapshot feature to support matrix
 * PowerMax docs -  changing cinder tags to powermax
 * Use excutils.save\_and\_reraise\_exception instead of reraise
@@ -71,6 +386,7 @@ CHANGES
 * Update required version of taskflow
 * Update minimal acceptable glanceclient
 * Create volume attachments status check
+* Allow setting Pure host personality
 * Add project\_id in group snapshots list and show API
 * Use 'target\_helper' config opt in linstor driver
 * Update oslo.privsep minimum requirement
@@ -82,6 +398,7 @@ CHANGES
 * Drop py35 jobs
 * VNX: update sg in cache
 * Disable etcd3 for lio-barbican job
+* Enable service capabilities update at less than 60 seconds
 * Extend timeout for database migration tests
 * Improve documentation of goodness/filter function
 * api-ref: add qos\_specs\_id to show default volume type response
@@ -144,6 +461,7 @@ CHANGES
 * api-ref: Add cipher to update an encryption type interface
 * VMAX driver doc - clarify PowerMax rebrand release note
 * Fix keystone auth config in install doc
+* Fix the misspelling of "volumes"
 * Fix "import xxx as xxx" grammar
 * Add missing ws seperator between words
 * Add check\_encryption\_provider to volume utils
@@ -156,6 +474,7 @@ CHANGES
 * Pass image\_id to ImageDownloadFailed
 * Update FusionStorage Cinder Driver by using REST API
 * Move Fujitsu ETERNUS DX related file
+* Refresh the Service.service\_id after re-spawning children
 * Correct default policy\_file in the sample config
 * Remove 'lvrename' from rootwrap
 * LinstorDrv : Fix wrong key using when getting device path
@@ -185,6 +504,7 @@ CHANGES
 * Reset snapshot status available
 * Add test case: retype volume when driver not initialized
 * Add test case: delete snapshot when driver not initialized
+* NetApp: Return all iSCSI targets-portals
 * Automate generation of API versions api-ref samples
 * NetApp Doc: Enhance 'netapp\_storage\_protocol' description
 * SPDK drivers documentation
@@ -273,6 +593,7 @@ CHANGES
 * Ignore updated stable release note
 * [Doc] Fix status and parameters of vol connection api
 * Imported Translations from Zanata
+* sqlalchemy: GroupTypeProjects.deleted is boolean
 * An alternate way to fix retype notifier test case
 * api-ref: document encryption type provider choices
 * Imported Translations from Zanata
